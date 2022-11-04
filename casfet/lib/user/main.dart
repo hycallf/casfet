@@ -13,19 +13,32 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.blue,
           ),
           body: Column(children: <Widget>[
-            Image.asset(
-              'casfet-white.png',
+            Container(
+              child: Image.asset(
+                'assets/images/casfet-white.png',
+                //color: Colors.blue,
+              ),
               color: Colors.blue,
+              padding: EdgeInsets.all(20.0),
+              margin: EdgeInsets.all(10.0),
             ),
-            Image.network('https://www.petanikode.com/img/flutter/flutter.png'),
+            // Image.asset(
+            //   'assets/images/casfet-white.png',
+            //   color: Colors.blue,
+            // ),
+            SizedBox(height: 20),
             Text(
               'Minuman',
               style: TextStyle(fontSize: 24, fontFamily: "Serif", height: 2.0),
             ),
+            SizedBox(height: 25),
+
+            // menu minuman
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //mainAxisAlignment: MainAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
               children: <Widget>[
                 Image.network(
                   'https://cf.shopee.co.id/file/f09a42294b476bcdeaff947f2a963507',
@@ -63,6 +76,7 @@ class MyApp extends StatelessWidget {
                 Text('Air Mineral'),
               ],
             ),
+            SizedBox(height: 50),
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //mainAxisAlignment: MainAxisAlignment.center,
