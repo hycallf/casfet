@@ -6,6 +6,10 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'register_view.dart';
 
+void main() {
+  runApp(MaterialApp(home: LoginPage()));
+}
+
 class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class LoginPage extends StatelessWidget {
 
 Widget _iconLogin() {
   return Image.asset(
-    "assets/img/casfet-white1.png",
+    "./assets/img/casfet-white 1.png",
     width: 150.0,
     height: 150.0,
   );
@@ -45,7 +49,7 @@ Widget _titleDescription() {
         padding: EdgeInsets.only(top: 16.0),
       ),
       Text(
-        "Login into app",
+        "Login",
         style: TextStyle(
           color: Colors.white,
           fontSize: 16.0,
@@ -54,14 +58,14 @@ Widget _titleDescription() {
       Padding(
         padding: EdgeInsets.only(top: 12.0),
       ),
-      Text(
+      /*Text(
         "Lorem ipsum",
         style: TextStyle(
           fontSize: 12.0,
           color: Colors.white,
         ),
         textAlign: TextAlign.center,
-      ),
+      ),*/
     ],
   );
 }
@@ -131,6 +135,7 @@ Widget _buildButton(BuildContext context) {
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
           width: double.infinity,
+          //leading: const Icon(Icons.login)
           child: Text(
             'Login',
             style: TextStyle(color: ColorPalette.primaryColor),
