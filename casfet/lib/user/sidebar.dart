@@ -1,74 +1,76 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:developer';
+import 'dart:html';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(
-      title: const Text('Home'),
-      backgroundColor: Colors.blue.shade700,
-    ),
-    drawer: const NavigationDrawer(),
-  );
+void main() {
+  runApp(MaterialApp(home: Application()));
 }
 
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key)
-
+class Application extends StatefulWidget {
   @override
-  Widget build(BuildContext context) => Drawer(
-    child: SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          buildHeader(context),
-          buildMenuItems(context),
-        ],
-      ),
-    ),
-  );
+  _ApplicationState createState() => _ApplicationState();
+}
 
-  Widget buildHeader(BuildContext context) => Container(
-    padding: EdgeInsets.only(
-      top: MediaQuery.of(context).padding.top,
-    ),
-  );
-
-  Widget buildMenuItems(BuildContext context) => Column(
-    children: [
-      ListTile(
-        leading: const Icon(Icons.home_outlined),
-        title: const Text('Home'),
-        onTap: () {},
+class _ApplicationState extends State<Application> {
+  @override
+  Widget build(BuildContext context) {
+    // ignore: unnecessary_new
+    return new Scaffold(
+      appBar: AppBar(
+        title: Text('CASFET'),
+        backgroundColor: Color.fromARGB(255, 5, 82, 146),
       ),
-      ListTile(
-        leading: const Icon(Icons.favorite_border),
-        title: const Text('Favourites'),
-        onTap: () {},
+      drawer: Drawer(
+        // ignore: sort_child_properties_last
+        child: ListView(
+          children: <Widget>[
+            UserAccountsDrawerHeader(
+                accountName: Text('Username'),
+                accountEmail: Text('accountEmail@gmail.com')
+                /*currentAccountPicture: new CircleAvatar(
+                  backgroundColor: Colors.black26,
+                  child: new Text('p'),
+                ),
+                decoration: new BoxDecoration(color: Colors.lightBlue),
+                otherAccountsPictures: <Widget>[
+                  new CircleAvatar(
+                    backgroundColor: Colors.black26,
+                    child: new Text('Y'),
+                  ),
+                  new CircleAvatar(
+                    backgroundColor: Colors.black26,
+                    child: new Text('W'),
+                  ),
+                ]*/
+                ),
+            new ListTile(
+              title: Text('Home Page'),
+              trailing: new Icon(Icons.home_outlined),
+            ),
+            new ListTile(
+              title: Text('User Page'),
+              trailing: new Icon(Icons.person_outline),
+            ),
+            new ListTile(
+              title: Text('Profile'),
+              trailing: new Icon(Icons.edit_outlined),
+            ),
+            new ListTile(
+              title: Text('Notification'),
+              trailing: new Icon(Icons.notifications_outlined),
+            ),
+            new ListTile(
+              title: Text('About'),
+              trailing: new Icon(Icons.newspaper_outlined),
+            ),
+            new ListTile(
+              title: Text('Logout'),
+              trailing: new Icon(Icons.logout_rounded),
+            )
+          ],
+        ),
+        backgroundColor: Colors.blue,
       ),
-      ListTile(
-        leading: const Icon(Icons.workspaces_outline),
-        title: const Text('Workflow'),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: const Icon(Icons.update),
-        title: const Text('Updates'),
-        onTap: () {},
-      ),
-      const Divider(color: Colors.black54), // Garis pemisah
-      ListTile(
-        leading: const Icon(Icons.account_tree_outlined),
-        title: const Text('Plugins'),
-        onTap: () {},
-      ),
-      ListTile(
-        leading: const Icon(Icons.notifications_outlined),
-        title: const Text('Notifications'),
-        onTap: () {},
-      ),
-    ],
-  );
+    );
+  }
 }
