@@ -1,6 +1,12 @@
-import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:casfet/home.dart';
+import 'package:flutter/material.dart';
+// import 'package:flutter_application_1/audio/lib/main.dart';
+// import 'dart:async';
+import 'package:casfet/splashscreen.dart';
+
+void main() {
+  runApp(MaterialApp(home: SplashScreen()));
+}
 
 class SplashScreen extends StatefulWidget {
   _SplashScreen createState() => _SplashScreen();
@@ -17,7 +23,7 @@ class _SplashScreen extends State<SplashScreen> {
     return Timer(duration, () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Home()),
+        MaterialPageRoute(builder: (context) => SplashScreen()),
       );
     });
   }
@@ -31,16 +37,16 @@ class _SplashScreen extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            Icon(
-              Icons.school,
-              size: 100.0,
-              color: Colors.white,
+            Image.asset(
+              'images/casfet-white.png',
+              scale: 20,
             ),
             SizedBox(
-              height: 24.0,
+              height: 2.0,
+              width: 0.8,
             ),
             Text(
-              "casfet",
+              "",
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
