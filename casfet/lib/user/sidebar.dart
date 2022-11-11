@@ -1,17 +1,18 @@
 import 'dart:developer';
 import 'dart:html';
+import 'package:casfet/admin/sidebar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(home: Application()));
+  runApp(MaterialApp(home: SidebarUser()));
 }
 
-class Application extends StatefulWidget {
+class SidebarUser extends StatefulWidget {
   @override
-  _ApplicationState createState() => _ApplicationState();
+  _SidebarUserState createState() => _SidebarUserState();
 }
 
-class _ApplicationState extends State<Application> {
+class _SidebarUserState extends State<SidebarUser> {
   @override
   Widget build(BuildContext context) {
     // ignore: unnecessary_new
@@ -25,47 +26,36 @@ class _ApplicationState extends State<Application> {
         child: ListView(
           children: <Widget>[
             UserAccountsDrawerHeader(
-                accountName: Text('Username'),
-                accountEmail: Text('accountEmail@gmail.com')
-                /*currentAccountPicture: new CircleAvatar(
+                accountName:
+                    Text('User', style: TextStyle(fontWeight: FontWeight.bold)),
+                accountEmail: Text('User@gmail.com',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                currentAccountPicture: new CircleAvatar(
                   backgroundColor: Colors.black26,
-                  child: new Text('p'),
+                  child: new Text('User'),
                 ),
-                decoration: new BoxDecoration(color: Colors.lightBlue),
-                otherAccountsPictures: <Widget>[
-                  new CircleAvatar(
-                    backgroundColor: Colors.black26,
-                    child: new Text('Y'),
-                  ),
-                  new CircleAvatar(
-                    backgroundColor: Colors.black26,
-                    child: new Text('W'),
-                  ),
-                ]*/
-                ),
+                decoration:
+                    new BoxDecoration(color: Color.fromARGB(255, 5, 82, 146)),
+                otherAccountsPictures: <Widget>[]),
             new ListTile(
-              title: Text('Home Page'),
-              trailing: new Icon(Icons.home_outlined),
+              title: Text('Home Page',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              leading: new Icon(Icons.home_outlined),
             ),
             new ListTile(
-              title: Text('User Page'),
-              trailing: new Icon(Icons.person_outline),
+              title: Text('Profile',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              leading: new Icon(Icons.edit_outlined),
             ),
             new ListTile(
-              title: Text('Profile'),
-              trailing: new Icon(Icons.edit_outlined),
+              title:
+                  Text('About', style: TextStyle(fontWeight: FontWeight.bold)),
+              leading: new Icon(Icons.newspaper_outlined),
             ),
             new ListTile(
-              title: Text('Notification'),
-              trailing: new Icon(Icons.notifications_outlined),
-            ),
-            new ListTile(
-              title: Text('About'),
-              trailing: new Icon(Icons.newspaper_outlined),
-            ),
-            new ListTile(
-              title: Text('Logout'),
-              trailing: new Icon(Icons.logout_rounded),
+              title:
+                  Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
+              leading: new Icon(Icons.logout_rounded),
             )
           ],
         ),
