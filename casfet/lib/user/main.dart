@@ -107,7 +107,7 @@ class MyApp extends StatelessWidget {
               // ),
               //color: Color(0xff14618C),
               padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
-              margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+              margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
               //border: BorderRadius.circular(20)
             ),
 
