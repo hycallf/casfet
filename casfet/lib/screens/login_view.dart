@@ -1,4 +1,4 @@
-//import 'dart:html';
+// import 'dart:html';
 // import 'dart:ui';
 
 import 'package:casfet/constants.dart';
@@ -36,7 +36,7 @@ class LoginPage extends StatelessWidget {
 
 Widget _iconLogin() {
   return Image.asset(
-    "./assets/img/casfet-white 1.png",
+    "./assets/images/casfet-white.png",
     width: 150.0,
     height: 150.0,
   );
