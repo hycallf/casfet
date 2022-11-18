@@ -39,21 +39,23 @@ class _SplashScreen extends State<SplashScreen> {
           children: <Widget>[
             Image.asset(
               'assets/images/casfet-white.png',
-              width: 200,
-
-              //scale: 50,
+              width: 250,
             ),
             SizedBox(
-              height: 2.0,
-              width: 0.8,
+              height: 200,
+              width: 200,
             ),
             Text(
-              "",
+              "powered by:",
               style: TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 30.0,
+                fontWeight: FontWeight.normal,
+                fontSize: 12.0,
               ),
+            ),
+            Image.asset(
+              'assets/images/cs-white.png',
+              width: 125,
             ),
           ],
         ),
