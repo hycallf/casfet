@@ -38,8 +38,10 @@ class _SplashScreen extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'images/casfet-white.png',
-              scale: 20,
+              'assets/images/casfet-white.png',
+              width: 200,
+
+              //scale: 50,
             ),
             SizedBox(
               height: 2.0,
