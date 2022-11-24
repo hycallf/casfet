@@ -167,6 +167,8 @@ class MyApp extends StatelessWidget {
                         color: Colors.blue, size: 30.0)),
                 IconButton(
                     onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SortPage()));
                       print("Icon Sort clicked");
                     },
                     icon: Icon(Icons.sort, color: Colors.blue, size: 30.0)),
@@ -304,6 +306,44 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ])),
+    );
+  }
+}
+
+class SortPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Filter"),
+      ),
+      body: Center(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              title: Text("A-Z"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Makanan"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Minuman"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Harga terendah"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Harga tertinggi"),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
