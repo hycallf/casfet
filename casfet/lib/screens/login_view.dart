@@ -132,7 +132,10 @@ Widget _buildButton(BuildContext context) {
       Padding(
         padding: EdgeInsets.only(top: 16.0),
       ),
-      InkWell(
+      TextButton(
+        onPressed: () {
+          //forgot password screen
+        },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
           width: double.infinity,

@@ -155,6 +155,32 @@ Widget _textField() {
         obscureText: true,
         autofocus: false,
       ),
+      Padding(
+        padding: EdgeInsets.only(top: 12.0),
+      ),
+      TextFormField(
+        decoration: const InputDecoration(
+          border: OutlineInputBorder(),
+          enabledBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: ColorPalette.underlineTextField,
+              width: 1.5,
+            ),
+          ),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.white,
+              width: 3.0,
+            ),
+          ),
+          hintText: "Input Phone Number",
+          hintStyle: TextStyle(color: ColorPalette.primaryDarkColor),
+        ),
+        style: TextStyle(color: Colors.white),
+        obscureText: true,
+        autofocus: false,
+      ),
+
       // Padding(
       //   padding: EdgeInsets.only(top: 12.0),
       //   child: TextField(
@@ -179,7 +205,10 @@ Widget _buildButton(BuildContext context) {
       Padding(
         padding: EdgeInsets.only(top: 30.0),
       ),
-      InkWell(
+      TextButton(
+        onPressed: () {
+          //forgot password screen
+        },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
           width: double.infinity,
