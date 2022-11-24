@@ -60,7 +60,7 @@ Widget _titleDescription() {
         padding: EdgeInsets.only(top: 16.0),
       ),
       Text(
-        "Create a New Account.",
+        "Create a new account.",
         style: TextStyle(
           color: Colors.white,
           fontSize: 16.0,
@@ -90,13 +90,13 @@ Widget _textField() {
       TextFormField(
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: ColorPalette.underlineTextField,
                 width: 1.5,
               ),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.white,
                 width: 3.0,
@@ -113,13 +113,13 @@ Widget _textField() {
       TextFormField(
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
-            enabledBorder: OutlineInputBorder(
+            enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: ColorPalette.underlineTextField,
                 width: 1.5,
               ),
             ),
-            focusedBorder: OutlineInputBorder(
+            focusedBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.white,
                 width: 3.0,
@@ -136,13 +136,13 @@ Widget _textField() {
       TextFormField(
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
               color: ColorPalette.underlineTextField,
               width: 1.5,
             ),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
               color: Colors.white,
               width: 3.0,
@@ -195,9 +195,34 @@ Widget _buildButton(BuildContext context) {
           ),
         ),
       ),
-      // Padding(
-      //   padding: EdgeInsets.only(top: 16.0),
-      // ),
+      Padding(
+        padding: EdgeInsets.only(top: 16.0),
+      ),
+
+      // Digunakan ketika kita sudah mempunyai akun Casfet, maka akan melucur ke halaman "Login".
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Already have a Casfet account?",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              //forgot password screen
+            },
+            child: const Text(
+              'Login',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
       // Text(
       //   'or',
       //   style: TextStyle(

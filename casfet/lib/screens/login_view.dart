@@ -49,7 +49,7 @@ Widget _titleDescription() {
         padding: EdgeInsets.only(top: 16.0),
       ),
       Text(
-        "Login",
+        "Login to your account.",
         style: TextStyle(
           color: Colors.white,
           fontSize: 16.0,
@@ -58,14 +58,15 @@ Widget _titleDescription() {
       Padding(
         padding: EdgeInsets.only(top: 12.0),
       ),
-      /*Text(
-        "Lorem ipsum",
-        style: TextStyle(
-          fontSize: 12.0,
-          color: Colors.white,
-        ),
-        textAlign: TextAlign.center,
-      ),*/
+
+      // Text(
+      //   "Lorem ipsum",
+      //   style: TextStyle(
+      //     fontSize: 12.0,
+      //     color: Colors.white,
+      //   ),
+      //   textAlign: TextAlign.center,
+      // ),
     ],
   );
 }
@@ -78,7 +79,7 @@ Widget _textField() {
       ),
       TextFormField(
         decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
+            border: OutlineInputBorder(),
             enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(
                 color: ColorPalette.underlineTextField,
@@ -92,7 +93,7 @@ Widget _textField() {
               ),
             ),
             hintText: "Username",
-            hintStyle: TextStyle(color: ColorPalette.underlineTextField)),
+            hintStyle: TextStyle(color: ColorPalette.primaryDarkColor)),
         style: TextStyle(color: Colors.white),
         autofocus: false,
       ),
@@ -101,7 +102,7 @@ Widget _textField() {
       ),
       TextFormField(
         decoration: const InputDecoration(
-          border: UnderlineInputBorder(),
+          border: OutlineInputBorder(),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
               color: ColorPalette.underlineTextField,
@@ -182,17 +183,17 @@ Widget _buildButton(BuildContext context) {
             ),
           ),
         ],
-      )
+      ),
 
-      /*FlatButton(
-        child: Text(
-          'Register',
-          style: TextStyle(color: Colors.white),
-        ),
-        onPressed: () {
-          Navigator.pushNamed(context, RegisterPage.routeName);
-        },
-      ),*/
+      // FlatButton(
+      //   child: Text(
+      //     'Register',
+      //     style: TextStyle(color: Colors.white),
+      //   ),
+      //   onPressed: () {
+      //     Navigator.pushNamed(context, RegisterPage.routeName);
+      //   },
+      // ),
     ],
   );
 }
