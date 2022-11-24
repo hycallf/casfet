@@ -21,6 +21,17 @@ class RegisterPage extends StatelessWidget {
           children: <Widget>[
             Center(
               child: Column(children: <Widget>[
+                Container(
+                  decoration: const BoxDecoration(
+                    color: Color(0xff14618C),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10.0), // radius
+                    ),
+                  ),
+                  child: Row(
+                    children: <Widget>[],
+                  ),
+                ),
                 _iconRegister(),
                 _titleDescription(),
                 _textField(),
@@ -78,14 +89,14 @@ Widget _textField() {
       ),
       TextFormField(
         decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            enabledBorder: UnderlineInputBorder(
+            border: OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: ColorPalette.underlineTextField,
                 width: 1.5,
               ),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.white,
                 width: 3.0,
@@ -101,14 +112,14 @@ Widget _textField() {
       ),
       TextFormField(
         decoration: const InputDecoration(
-            border: UnderlineInputBorder(),
-            enabledBorder: UnderlineInputBorder(
+            border: OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: ColorPalette.underlineTextField,
                 width: 1.5,
               ),
             ),
-            focusedBorder: UnderlineInputBorder(
+            focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
                 color: Colors.white,
                 width: 3.0,
@@ -124,14 +135,14 @@ Widget _textField() {
       ),
       TextFormField(
         decoration: const InputDecoration(
-          border: UnderlineInputBorder(),
-          enabledBorder: UnderlineInputBorder(
+          border: OutlineInputBorder(),
+          enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color: ColorPalette.underlineTextField,
               width: 1.5,
             ),
           ),
-          focusedBorder: UnderlineInputBorder(
+          focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
               color: Colors.white,
               width: 3.0,
@@ -144,6 +155,20 @@ Widget _textField() {
         obscureText: true,
         autofocus: false,
       ),
+      // Padding(
+      //   padding: EdgeInsets.only(top: 12.0),
+      //   child: TextField(
+      //     decoration: InputDecoration(
+      //       prefixIcon: Icon(Icons.phone),
+      //       labelText: 'Input Phone Number',
+      //       enabledBorder: OutlineInputBorder(
+      //         borderSide: BorderSide(
+      //           color: Colors.white,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      // ),
     ],
   );
 }

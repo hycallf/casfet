@@ -150,13 +150,40 @@ Widget _buildButton(BuildContext context) {
       Padding(
         padding: EdgeInsets.only(top: 16.0),
       ),
-      Text(
-        'or',
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 12.0,
-        ),
-      ),
+
+      // Text(
+      //   'or',
+      //   style: TextStyle(
+      //     color: Colors.white,
+      //     fontSize: 12.0,
+      //   ),
+      // ),
+
+      // Digunakan ketika kita belum mempunyai akun Casfet, maka akan melucur ke halaman "Register".
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Don't have a Casfet account?",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              //forgot password screen
+            },
+            child: const Text(
+              'Register',
+              style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      )
+
       /*FlatButton(
         child: Text(
           'Register',
