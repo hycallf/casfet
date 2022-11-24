@@ -1,15 +1,27 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
+=======
+import 'package:flutter/services.dart';
+
+import 'core/app_export.dart';
+>>>>>>> Stashed changes
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]).then((value) {
+    Logger.init(kReleaseMode ? LogMode.live : LogMode.debug);
+    runApp(MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+<<<<<<< Updated upstream
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -110,6 +122,17 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+=======
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      translations: AppLocalization(),
+      locale: Get.deviceLocale, //for setting localization strings
+      fallbackLocale: Locale('en', 'US'),
+      title: 'andi_s_application2',
+      initialBinding: InitialBindings(),
+      initialRoute: AppRoutes.initialRoute,
+      getPages: AppRoutes.pages,
+>>>>>>> Stashed changes
     );
   }
 }
