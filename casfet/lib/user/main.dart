@@ -121,22 +121,36 @@ class MyApp extends StatelessWidget {
                   Radius.circular(10.0), // radius
                 ),
               ),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Search a product....",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontFamily: "Timesquare",
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xff4F4B4B)),
-                    ),
-                    Icon(
-                      Icons.search,
-                      color: Color(0xff4F4B4B),
-                    )
-                  ]),
+              child: TextField(
+                //controller: _controller,
+                //obscureText: true,
+
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'search a product...',
+                ),
+
+                onSubmitted: (String value) async {
+                  await showDialog<void>(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('Thanks!'),
+                        content: Text(
+                            'You typed "$value", which has length ${value.characters.length}.'),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text('OK'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+              ),
               padding: EdgeInsets.all(10),
               margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
             ),
