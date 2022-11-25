@@ -1,0 +1,42 @@
+# flutter_native_splash-development.yaml
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/casfet-white.png
+  branding: assets/images/casfet-white.png
+  color_dark: "#121212"
+  image_dark: assets/logo-development.png
+  branding_dark: assets/branding-development.png
+  android_12:
+    image: assets/images/casfet-white.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/logo-development.png
+    icon_background_color_dark: "#121212"
+  web: false
+# flutter_native_splash-acceptance.yaml
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/casfet-white.png
+  branding: assets/images/casfet-white.png
+  color_dark: "#121212"
+  image_dark: assets/logo-acceptance.png
+  branding_dark: assets/branding-acceptance.png
+  android_12:
+    image: assets/images/casfet-white.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/logo-acceptance.png
+    icon_background_color_dark: "#121212"
+  web: false
+# flutter_native_splash-production.yaml
+flutter_native_splash:
+  color: "#ffffff"
+  image: assets/images/casfet-white.png
+  branding: assets/images/casfet-white.png
+  color_dark: "#121212"
+  image_dark: assets/logo-production.png
+  branding_dark: assets/branding-production.png
+  android_12:
+    image: assets/images/casfet-white.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/logo-production.png
+    icon_background_color_dark: "#121212"
+  web: false
