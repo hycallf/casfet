@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
       title: 'First App',
       home: Scaffold(
           appBar: AppBar(
+
+
+
             toolbarHeight: 80,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -214,18 +217,20 @@ class MyApp extends StatelessWidget {
             //   color: Colors.blue,
             // ),
             //SizedBox(height: 15),
+
             Text(
               'Minuman',
               style: TextStyle(fontSize: 24, fontFamily: "Serif", height: 2.0),
             ),
+
             SizedBox(height: 25),
 
             // menu minuman
+
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //mainAxisAlignment: MainAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-
               children: <Widget>[
                 Image.network(
                   'https://cf.shopee.co.id/file/f09a42294b476bcdeaff947f2a963507',
@@ -239,6 +244,7 @@ class MyApp extends StatelessWidget {
                   height: 80.0,
                   fit: BoxFit.cover,
                 ),
+
                 Image.network(
                   'https://cf.shopee.co.id/file/9b137dbed8169a75fa393b3f463ae7b8',
                   width: 80.0,
@@ -246,6 +252,7 @@ class MyApp extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
                 Image.network(
+
                     'https://images.k24klik.com/product/large/apotek_online_k24klik_20211206100212359225_AQUA-AIR-MINERAL-1500ML.jpg',
                     width: 80.0,
                     height: 80.0,
@@ -281,6 +288,7 @@ class MyApp extends StatelessWidget {
                   height: 80.0,
                   fit: BoxFit.cover,
                 ),
+
                 Image.network(
                   'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//92/MTA-2643185/fruit-tea_fruit-tea-blackcurrant-minuman-kemasan--500-ml--botol-_full02.jpg',
                   width: 80.0,
