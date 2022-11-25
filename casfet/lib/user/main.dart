@@ -306,6 +306,9 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ])),
+      /*routes: <String, WidgetBuilder>{
+        '/settings': (BuildContext context) => new SortPage(),
+      },*/
     );
   }
 }
