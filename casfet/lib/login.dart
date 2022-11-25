@@ -3,7 +3,7 @@ import 'dart:html';
 import 'dart:ui';
 import 'register.dart';
 import 'admin/main.dart';
-import 'user/main.dart';
+import 'user/main1.dart';
 
 Color primaryBlue = Color(0xff2972ff);
 Color colorLight = Color(0xfffbfbfb);
