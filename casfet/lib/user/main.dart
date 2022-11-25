@@ -5,6 +5,13 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return new MaterialApp(home: new HomeScreen());
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       //debugShowCheckedModeBanner: false,
       title: 'First App',
@@ -306,9 +313,6 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ])),
-      /*routes: <String, WidgetBuilder>{
-        '/settings': (BuildContext context) => new SortPage(),
-      },*/
     );
   }
 }
@@ -318,7 +322,7 @@ class SortPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Filter"),
+        title: Text("Filter/Sort"),
       ),
       body: Center(
         child: ListView(
