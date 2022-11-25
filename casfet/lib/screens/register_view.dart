@@ -1,6 +1,8 @@
 // import 'dart:html';
 // import 'dart:ui';
 
+// import 'dart:js_util';
+
 import 'package:casfet/constants.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
@@ -177,7 +179,6 @@ Widget _textField() {
           hintStyle: TextStyle(color: ColorPalette.primaryDarkColor),
         ),
         style: TextStyle(color: Colors.white),
-        obscureText: true,
         autofocus: false,
       ),
 
