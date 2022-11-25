@@ -21,14 +21,14 @@ class _ProductManager extends State<ProductManager> {
 
   List<Product> produkToko = [
     Product(
-        product_name: "Beng-beng",
+        product_name: "Momogi",
         product_quantity: 20,
         product_price: 2000,
         product_sold: 20,
         product_img: "assets/images/no-image.jpg",
         product_category: "Snack"),
     Product(
-        product_name: "Milku",
+        product_name: "Golda",
         product_quantity: 30,
         product_price: 4000,
         product_sold: 10,
@@ -82,7 +82,7 @@ class _ProductManager extends State<ProductManager> {
           child: Column(
             children: [
               Text(
-                "Edit Form",
+                "Edit Produk",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               Padding(padding: EdgeInsets.only(top: 10.0)),
@@ -132,6 +132,99 @@ class _ProductManager extends State<ProductManager> {
                         onPressed: () {},
                         child: Text(
                           "Submit",
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.blue[900],
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(left: 10.0)),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Cancel",
+                          style: TextStyle(color: Colors.white, fontSize: 14),
+                        ),
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.red[900],
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+      isScrollControlled: true,
+    );
+  }
+
+  void _showModalAdd() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        double modalHeight = MediaQuery.of(context).size.height * 0.5;
+        double keyboardHeight = MediaQuery.of(context).viewInsets.bottom;
+
+        return Container(
+          padding: EdgeInsets.all(20.0),
+          color: Colors.black12,
+          height: _isFocused ? modalHeight + keyboardHeight : modalHeight,
+          child: Column(
+            children: [
+              Text(
+                "Tambah Produk",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+              Padding(padding: EdgeInsets.only(top: 10.0)),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "product name",
+                ),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "price",
+                ),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintText: "Stock",
+                ),
+              ),
+              DropdownButton<String>(
+                value: dropdownValue,
+                icon: const Icon(Icons.arrow_downward),
+                elevation: 16,
+                style: const TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String? value) {
+                  // This is called when the user selects an item.
+                  setState(() {
+                    dropdownValue = value!;
+                  });
+                },
+                items: category.map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+              Padding(padding: EdgeInsets.only(top: 10.0)),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Tambah",
                           style: TextStyle(color: Colors.white, fontSize: 14),
                         ),
                         style: TextButton.styleFrom(

@@ -42,6 +42,8 @@ dependencies:
   alert_dialog: ^1.0.0
   image_picker: 
   http:
+  flutter_native_splash: ^2.2.8
+  splashscreen:
 
 dev_dependencies:
   flutter_test:

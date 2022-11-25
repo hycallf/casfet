@@ -5,11 +5,11 @@ import 'navigasi.dart';
 // import 'list-user.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const AdminPage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class AdminPage extends StatelessWidget {
+  const AdminPage({super.key});
 
   // static const String _title = 'Home page';
 

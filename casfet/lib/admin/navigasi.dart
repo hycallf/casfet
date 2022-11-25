@@ -1,6 +1,10 @@
+import 'package:casfet/admin/addProduct.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
 import 'list-user.dart';
+import './main.dart';
+import 'package:confirm_dialog/confirm_dialog.dart';
+import 'guestmode.dart';
 // import 'addProduct.dart';
 
 class Navigasi extends StatefulWidget {
@@ -22,6 +26,8 @@ class _NavigasiState extends State<Navigasi> {
       'Account',
       style: optionStyle,
     ),
+    MyApp(),
+    Guestmode(),
   ];
 
   void _onItemTapped(int index) {
@@ -70,7 +76,7 @@ class _NavigasiState extends State<Navigasi> {
               title:
                   Text('Guest', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.person_outline),
-              onTap: () => _onItemTapped(3),
+              onTap: () => _onItemTapped(4),
             ),
             new ListTile(
               title: Text('Profile',
@@ -82,13 +88,24 @@ class _NavigasiState extends State<Navigasi> {
               title:
                   Text('About', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.newspaper_outlined),
-              onTap: () => _onItemTapped(5),
+              onTap: () => _onItemTapped(3),
             ),
             new ListTile(
               title:
                   Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.logout_rounded),
-              onTap: () => _onItemTapped(6),
+              onTap: () async {
+                if (await confirm(
+                  context,
+                  title: const Text('Confirm'),
+                  content: const Text('Would you like to remove?'),
+                  textOK: const Text('Yes'),
+                  textCancel: const Text('No'),
+                )) {
+                  return _onItemTapped(3);
+                }
+                return print('pressedCancel');
+              },
             )
           ],
         ),
