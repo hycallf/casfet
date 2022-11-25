@@ -5,6 +5,7 @@ import 'package:casfet/constants.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import 'register_view.dart';
+import '../user/main.dart';
 
 void main() {
   runApp(MaterialApp(home: LoginPage()));
@@ -134,7 +135,7 @@ Widget _buildButton(BuildContext context) {
       ),
       TextButton(
         onPressed: () {
-          //forgot password screen
+          Navigator.push(context, MaterialPageRoute(builder: (_) => MyApp()));
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -175,7 +176,8 @@ Widget _buildButton(BuildContext context) {
           ),
           TextButton(
             onPressed: () {
-              //forgot password screen
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => RegisterPage()));
             },
             child: const Text(
               'Register',
