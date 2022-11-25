@@ -242,7 +242,6 @@ Widget _buildButton(BuildContext context) {
           ),
           TextButton(
             onPressed: () {
-              //forgot password screen
               Navigator.push(
                   context, MaterialPageRoute(builder: (_) => LoginPage()));
             },
