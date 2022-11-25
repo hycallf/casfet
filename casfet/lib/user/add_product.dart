@@ -20,12 +20,9 @@ class MyApp extends StatelessWidget {
                     fit: BoxFit.contain,
                     height: 40,
                   ),
-                  //padding: EdgeInsets.fromLTRB(.0, 0.0, 0.0, 0.0),
                 )
               ],
             ),
-            // title: Image.asset('assets/images/casfet-white.png',
-            //     fit: BoxFit.cover),
             backgroundColor: Colors.blue,
           ),
           body: Column(children: <Widget>[
@@ -39,73 +36,91 @@ class MyApp extends StatelessWidget {
                 ),
               ),
 
-              child: Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Column(
-                    children: [
-                      Container(
-                        child: Image.asset(
-                          'assets/images/brand-1.png', // logo toko
-                          width: 117,
-                          height: 117,
-                          fit: BoxFit.contain,
-                        ),
-                        margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
-                      )
-                    ],
-                  ),
-                  // Column sebelah kanan dari dashboard
-                  Column(
+              child: Column(
+                //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Row(
                     children: <Widget>[
-                      Row(
+                      Column(
                         children: [
-                          Text(
-                            "Food / Drink Name",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: "Timesquare",
-                                fontWeight: FontWeight.w700,
-                                color: Colors.white),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            "ID: 0000000000",
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontFamily: "Timesquare",
-                                //fontWeight: FontWeight.w700,
-                                color: Colors.white),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.price_change,
-                            color: Colors.white,
-                          ),
-                          Text(
-                            "Rp. 9,999,999,999",
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontFamily: "Timesquare",
-                                fontWeight: FontWeight.w400,
-                                color: Colors.white),
+                          Container(
+                            child: Image.asset(
+                              'assets/images/brand-1.png', // logo toko
+                              width: 117,
+                              height: 117,
+                              fit: BoxFit.contain,
+                            ),
+                            margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
                           )
                         ],
                       ),
+                      // Column sebelah kanan dari dashboard
+                      Column(
+                        children: <Widget>[
+                          Row(
+                            children: [
+                              Text(
+                                "Food / Drink Name",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontFamily: "Timesquare",
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                "ID: 0000000000",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: "Timesquare",
+                                    color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.price_change,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                "Rp. 9,999,999,999",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontFamily: "Timesquare",
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.white),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text("Nama Product"),
+                      TextField(),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text("Harga"),
+                      TextField(),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Text("Description"),
+                      TextField(),
                     ],
                   )
                 ],
               ),
-              // child: Image.asset(
-              //   'assets/images/casfet-white.png',
-              // ),
-              //color: Color(0xff14618C),
+
               padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
               margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
               //border: BorderRadius.circular(20)
