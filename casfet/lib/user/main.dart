@@ -168,7 +168,7 @@ class MyApp extends StatelessWidget {
                 IconButton(
                     onPressed: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => SortPage()));
+                          MaterialPageRoute(builder: (_) => SortPage()));
                       print("Icon Sort clicked");
                     },
                     icon: Icon(Icons.sort, color: Colors.blue, size: 30.0)),
