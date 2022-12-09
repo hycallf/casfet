@@ -2,7 +2,8 @@ import 'package:casfet/admin/addProduct.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
 import 'list-user.dart';
-import './main.dart';
+import '/login.dart';
+import '/about.dart';
 import 'package:confirm_dialog/confirm_dialog.dart';
 import 'guestmode.dart';
 // import 'addProduct.dart';
@@ -26,7 +27,7 @@ class _NavigasiState extends State<Navigasi> {
       'Account',
       style: optionStyle,
     ),
-    MyApp(),
+    LoginPage(),
     Guestmode(),
   ];
 
@@ -94,18 +95,7 @@ class _NavigasiState extends State<Navigasi> {
               title:
                   Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.logout_rounded),
-              onTap: () async {
-                if (await confirm(
-                  context,
-                  title: const Text('Confirm'),
-                  content: const Text('Would you like to remove?'),
-                  textOK: const Text('Yes'),
-                  textCancel: const Text('No'),
-                )) {
-                  return _onItemTapped(3);
-                }
-                return print('pressedCancel');
-              },
+              onTap: () => showAlertDialog(context),
             )
           ],
         ),
@@ -137,4 +127,37 @@ class _NavigasiState extends State<Navigasi> {
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  // set up the buttons
+  Widget cancelButton = TextButton(
+    child: Text("Cancel"),
+    onPressed: () => {
+      Navigator.of(context).pop(), // dismiss dialog
+    },
+  );
+  Widget continueButton = TextButton(
+    child: Text("Continue"),
+    onPressed: () => {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginPage())),
+    },
+  );
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("LogOut"),
+    content: Text("Would you like to logout?"),
+    actions: [
+      cancelButton,
+      continueButton,
+    ],
+  );
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

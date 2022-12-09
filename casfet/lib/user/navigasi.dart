@@ -1,6 +1,9 @@
+import 'package:casfet/about.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
 import 'list-produk.dart';
+import '/login.dart';
+import 'package:confirm_dialog/confirm_dialog.dart';
 // import 'addProduct.dart';
 
 class Navigasi extends StatefulWidget {
@@ -22,6 +25,8 @@ class _NavigasiState extends State<Navigasi> {
       'Account',
       style: optionStyle,
     ),
+    HomePage(),
+    About(),
   ];
 
   void _onItemTapped(int index) {
@@ -55,7 +60,7 @@ class _NavigasiState extends State<Navigasi> {
                   style: TextStyle(fontWeight: FontWeight.bold)),
               currentAccountPicture: new CircleAvatar(
                 backgroundColor: Colors.black26,
-                child: new Text('Admin'),
+                child: new Text('User'),
               ),
               decoration:
                   new BoxDecoration(color: Color.fromARGB(255, 5, 82, 146)),
@@ -76,13 +81,13 @@ class _NavigasiState extends State<Navigasi> {
               title:
                   Text('About', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.newspaper_outlined),
-              onTap: () => _onItemTapped(5),
+              onTap: () => _onItemTapped(4),
             ),
             new ListTile(
               title:
                   Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.logout_rounded),
-              onTap: () => _onItemTapped(6),
+              onTap: () => showAlertDialog(context),
             )
           ],
         ),
@@ -114,4 +119,37 @@ class _NavigasiState extends State<Navigasi> {
       ),
     );
   }
+}
+
+showAlertDialog(BuildContext context) {
+  // set up the buttons
+  Widget cancelButton = TextButton(
+    child: Text("Cancel"),
+    onPressed: () => {
+      Navigator.of(context).pop(), // dismiss dialog
+    },
+  );
+  Widget continueButton = TextButton(
+    child: Text("Continue"),
+    onPressed: () => {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LoginPage())),
+    },
+  );
+  // set up the AlertDialog
+  AlertDialog alert = AlertDialog(
+    title: Text("LogOut"),
+    content: Text("Would you like to logout?"),
+    actions: [
+      cancelButton,
+      continueButton,
+    ],
+  );
+  // show the dialog
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
 }

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'navigasi.dart';
 // import 'list-user.dart';
 
-void main() {
-  runApp(const AdminPage());
-}
+// void main() {
+//   runApp(const AdminPage());
+// }
 
 class AdminPage extends StatelessWidget {
   const AdminPage({super.key});
