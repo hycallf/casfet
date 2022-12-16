@@ -4,27 +4,23 @@ import 'homePage.dart';
 import 'list-produk.dart';
 import '/login.dart';
 import 'package:confirm_dialog/confirm_dialog.dart';
+import 'package:flutter/cupertino.dart';
 // import 'addProduct.dart';
 
-class Navigasi extends StatefulWidget {
-  const Navigasi({super.key});
+class NavigasiUser extends StatefulWidget {
+  const NavigasiUser({super.key});
 
   @override
-  State<Navigasi> createState() => _NavigasiState();
+  State<NavigasiUser> createState() => _NavigasiUserState();
 }
 
-class _NavigasiState extends State<Navigasi> {
+class _NavigasiUserState extends State<NavigasiUser> {
   int _selectedIndex = 1;
   var judul = 'HomePage';
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
     ProductManager(),
-    HomePage(),
-    Text(
-      'Account',
-      style: optionStyle,
-    ),
     HomePage(),
     About(),
   ];
@@ -75,19 +71,19 @@ class _NavigasiState extends State<Navigasi> {
               title: Text('Profile',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.edit_outlined),
-              onTap: () => _onItemTapped(4),
+              onTap: () => _onItemTapped(2),
             ),
             new ListTile(
               title:
                   Text('About', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.newspaper_outlined),
-              onTap: () => _onItemTapped(4),
+              onTap: () => _onItemTapped(2),
             ),
             new ListTile(
               title:
                   Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.logout_rounded),
-              onTap: () => showAlertDialog(context),
+              onTap: () => logout(context),
             )
           ],
         ),
@@ -121,35 +117,32 @@ class _NavigasiState extends State<Navigasi> {
   }
 }
 
-showAlertDialog(BuildContext context) {
-  // set up the buttons
-  Widget cancelButton = TextButton(
-    child: Text("Cancel"),
-    onPressed: () => {
-      Navigator.of(context).pop(), // dismiss dialog
-    },
-  );
-  Widget continueButton = TextButton(
-    child: Text("Continue"),
-    onPressed: () => {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => LoginPage())),
-    },
-  );
-  // set up the AlertDialog
-  AlertDialog alert = AlertDialog(
-    title: Text("LogOut"),
-    content: Text("Would you like to logout?"),
-    actions: [
-      cancelButton,
-      continueButton,
-    ],
-  );
-  // show the dialog
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      return alert;
-    },
-  );
+void logout(BuildContext context) {
+  showCupertinoDialog(
+      context: context,
+      builder: (BuildContext ctx) {
+        return CupertinoAlertDialog(
+          title: const Text('Please Confirm'),
+          content: const Text('Are you sure to logout?'),
+          actions: [
+            // The "Yes" button
+            CupertinoDialogAction(
+              onPressed: () => {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (ctx) => LoginPage())),
+              },
+              child: const Text('Yes'),
+              isDefaultAction: true,
+              isDestructiveAction: true,
+            ),
+            // The "No" button
+            CupertinoDialogAction(
+              onPressed: () => Navigator.pop(context),
+              child: const Text('No'),
+              isDefaultAction: false,
+              isDestructiveAction: false,
+            )
+          ],
+        );
+      });
 }

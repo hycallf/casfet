@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:html';
 import 'dart:ui';
 import 'register.dart';
-import './admin/main.dart';
-import './user/main1.dart';
+import './admin/navigasi.dart';
+import './user/navigasi.dart';
 
 Color primaryBlue = Color(0xff2972ff);
 Color colorLight = Color(0xfffbfbfb);
@@ -177,15 +177,7 @@ Widget _textField(BuildContext context) {
           padding: EdgeInsets.only(top: 16.0),
         ),
         TextButton(
-          onPressed: () {
-            if (uname.text == "admin" && passwd.text == "admin") {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => AdminPage()));
-            } else if (uname.text == "penjual" && passwd.text == "penjual") {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => UserPage()));
-            }
-          },
+          onPressed: () => checklogin(uname.text, passwd.text, context),
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 8.0),
             width: double.infinity,
@@ -215,8 +207,8 @@ Widget _textField(BuildContext context) {
             ),
             TextButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => RegisterPage()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RegisterPage()));
               },
               child: const Text(
                 'Register',
@@ -300,8 +292,10 @@ Widget _textField(BuildContext context) {
 
 void checklogin(String username, String password, BuildContext context) {
   if (username == "admin" && password == "admin") {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => AdminPage()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => NavigasiAdmin()));
   } else if (username == "penjual" && password == "penjual") {
-    Navigator.push(context, MaterialPageRoute(builder: (_) => UserPage()));
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => NavigasiUser()));
   }
 }

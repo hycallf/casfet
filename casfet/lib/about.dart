@@ -17,29 +17,8 @@ class About extends StatelessWidget {
               width: 250,
             ),
             SizedBox(
-              height: 200,
-              width: 200,
-            ),
-            Card(
-              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-              child: ListTile(
-                leading: Icon(
-                  Icons.copyright,
-                  color: Color.fromARGB(255, 20, 20, 20),
-                ),
-                title: Text(
-                  'Alpha Version 0.1',
-                  style: TextStyle(
-                    fontFamily: 'SourceSansPro',
-                    color: Color.fromARGB(255, 20, 20, 20),
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 200,
-              width: 200,
+              height: 100,
+              width: 100,
             ),
             Text(
               "powered by:",
