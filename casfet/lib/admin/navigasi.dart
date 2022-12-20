@@ -1,6 +1,7 @@
 import 'package:casfet/admin/addProduct.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
+import 'package:casfet/profil.dart';
 import 'list-user.dart';
 import '/login.dart';
 import '/about.dart';
@@ -60,9 +61,15 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
                   Text('Admin', style: TextStyle(fontWeight: FontWeight.bold)),
               accountEmail: Text('Admin@gmail.com',
                   style: TextStyle(fontWeight: FontWeight.bold)),
-              currentAccountPicture: new CircleAvatar(
-                backgroundColor: Colors.black26,
-                child: new Text('Admin'),
+              currentAccountPicture: GestureDetector(
+                child: new CircleAvatar(
+                  backgroundColor: Colors.black26,
+                  child: new Text('User'),
+                ),
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => Profil()));
+                },
               ),
               decoration:
                   new BoxDecoration(color: Color.fromARGB(255, 5, 82, 146)),
