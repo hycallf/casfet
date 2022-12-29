@@ -5,10 +5,9 @@ import 'package:casfet/profil.dart';
 import 'list-user.dart';
 import '/login.dart';
 import '/about.dart';
-import '/guest/guest.dart';
+import '/guest/navigasi.dart';
 import 'package:confirm_dialog/confirm_dialog.dart';
 import 'package:flutter/cupertino.dart';
-import 'guestmode.dart';
 // import 'addProduct.dart';
 
 class NavigasiAdmin extends StatefulWidget {
@@ -27,7 +26,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
     listUser(),
     HomePage(),
     About(),
-    Guest(),
+
     // About(),
     // About(),
   ];
@@ -84,13 +83,19 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
               title:
                   Text('Guest', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.person_outline),
-              onTap: () => _onItemTapped(3),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NavigasiGuest()));
+              },
             ),
             new ListTile(
               title: Text('Profile',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.edit_outlined),
-              onTap: () => _onItemTapped(2),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Profil()));
+              },
             ),
             new ListTile(
               title:
@@ -123,7 +128,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: 'About',
           ),
         ],
         currentIndex: _selectedIndex,

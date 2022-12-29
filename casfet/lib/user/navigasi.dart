@@ -5,6 +5,7 @@ import 'list-produk.dart';
 import '/login.dart';
 import 'package:confirm_dialog/confirm_dialog.dart';
 import 'package:flutter/cupertino.dart';
+import '/profil.dart';
 // import 'addProduct.dart';
 
 class NavigasiUser extends StatefulWidget {
@@ -54,9 +55,15 @@ class _NavigasiUserState extends State<NavigasiUser> {
                   Text('User', style: TextStyle(fontWeight: FontWeight.bold)),
               accountEmail: Text('User@gmail.com',
                   style: TextStyle(fontWeight: FontWeight.bold)),
-              currentAccountPicture: new CircleAvatar(
-                backgroundColor: Colors.black26,
-                child: new Text('User'),
+              currentAccountPicture: GestureDetector(
+                child: new CircleAvatar(
+                  backgroundColor: Colors.black26,
+                  child: new Text('User'),
+                ),
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => Profil()));
+                },
               ),
               decoration:
                   new BoxDecoration(color: Color.fromARGB(255, 5, 82, 146)),
@@ -71,7 +78,10 @@ class _NavigasiUserState extends State<NavigasiUser> {
               title: Text('Profile',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.edit_outlined),
-              onTap: () => _onItemTapped(2),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Profil()));
+              },
             ),
             new ListTile(
               title:
