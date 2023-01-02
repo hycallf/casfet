@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Guestmode extends StatelessWidget {
+class Drink extends StatefulWidget {
+  const Drink({super.key});
+
+  @override
+  State<Drink> createState() => _DrinkState();
+}
+
+class _DrinkState extends State<Drink> {
+  final ScrollController _controllerOne = ScrollController();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(children: <Widget>[
+    return Column(children: <Widget>[
       Container(
         /// bagian dashboard toko,
         /// menampilkan logo toko dan saldo toko tersebut
@@ -78,6 +86,7 @@ class Guestmode extends StatelessWidget {
             )
           ],
         ),
+
         // child: Image.asset(
         //   'assets/images/casfet-white.png',
         // ),
@@ -87,9 +96,6 @@ class Guestmode extends StatelessWidget {
         //border: BorderRadius.circular(20)
       ),
 
-      /// Akhir dari bagian dashboard
-
-      /// Search bar
       Container(
         decoration: const BoxDecoration(
           color: Color(0xffD9D9D9),
@@ -133,82 +139,60 @@ class Guestmode extends StatelessWidget {
               icon: Icon(Icons.sort, color: Colors.blue, size: 30.0)),
         ],
       ),
-      // Container(
-      //     child: IconButton(
-      //         icon: Icon(
-      //           Icons.sort,
-      //           color: Colors.blue,
-      //           size: 30.0,
-      //         ),
-      //         alignment: Alignment.centerRight,
-      //         onPressed: () {
-      //           print("Icon Sort clicked");
-      //         })),
-      // Container(
-      //     child: IconButton(
-      //         icon: Icon(
-      //           Icons.book_online_outlined,
-      //           color: Colors.blue,
-      //           size: 30.0,
-      //         ),
-      //         alignment: Alignment.centerRight,
-      //         onPressed: () {
-      //           print("Icon Sort clicked");
-      //         })),
-      // Row(
-      //     mainAxisAlignment: MainAxisAlignment.end,
-      //     children: const <Widget>[
-      //       Icon(
-      //         Icons.sort,
-      //         color: Colors.blue,
-      //         size: 30.0,
-      //         //textDirection: TextDirection.ltr,
-      //         //margin: EdgeInsets.all(10.0),
-      //         //EdgeInsetsGeometry? 10.0,
-      //       ),
-      //     ]),
-      //Container(),
-      // Image.asset(
-      //   'assets/images/casfet-white.png',
-      //   color: Colors.blue,
-      // ),
-      //SizedBox(height: 15),
+
       Text(
         'Minuman',
         style: TextStyle(fontSize: 24, fontFamily: "Serif", height: 2.0),
       ),
       SizedBox(height: 25),
 
-      // menu minuman
+      // Scrollbar(
+      //   controller: _controllerOne,
+      //   thumbVisibility: true,
+      //   child: GridView.builder(
+      //     controller: _controllerOne,
+      //     itemCount: 20,
+      //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      //         crossAxisCount: 3),
+      //     itemBuilder: (BuildContext context, int index) {
+      //       return Column(children: <Widget>[
+      //         Image.asset(
+      //           'images/drink/milku.jpg',
+      //           width: 80.0,
+      //           height: 80.0,
+      //           fit: BoxFit.cover,
+      //         ),
+      //         Text("$index")
+      //       ]);
+      //     },
+      //   ),
+      // ),
       Row(
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         //mainAxisAlignment: MainAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
 
         children: <Widget>[
-          Image.network(
-            'https://cf.shopee.co.id/file/f09a42294b476bcdeaff947f2a963507',
+          Image.asset(
+            'images/drink/milku.jpg',
             width: 80.0,
             height: 80.0,
             fit: BoxFit.cover,
           ),
-          // Image.network(
-          //   'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//103/MTA-6059982/agung_coffee_beer_agung_ngoro_-limun_jadul_khas_jombang_sejak_1963-_full05_h5d74bzt.jpg',
-          //   width: 80.0,
-          //   height: 80.0,
-          //   fit: BoxFit.cover,
-          // ),
-          Image.network(
-            'https://cf.shopee.co.id/file/9b137dbed8169a75fa393b3f463ae7b8',
+          Image.asset(
+            'images/drink/coffebeer.jpg',
             width: 80.0,
             height: 80.0,
             fit: BoxFit.cover,
           ),
-          Image.network(
-              'https://images.k24klik.com/product/large/apotek_online_k24klik_20211206100212359225_AQUA-AIR-MINERAL-1500ML.jpg',
-              width: 80.0,
-              height: 80.0,
-              fit: BoxFit.cover)
+          Image.asset(
+            'images/drink/tehpucuk.jpg',
+            width: 80.0,
+            height: 80.0,
+            fit: BoxFit.cover,
+          ),
+          Image.asset('images/drink/aqua.jpg',
+              width: 80.0, height: 80.0, fit: BoxFit.cover)
         ],
       ),
       Row(
@@ -218,52 +202,90 @@ class Guestmode extends StatelessWidget {
         children: <Widget>[
           Text('Milku'),
           Text('Coffee Beer'),
-          Text('Teh Botol'),
+          Text('Teh Pucuk'),
           Text('Air Mineral'),
         ],
       ),
-      SizedBox(height: 50),
-      Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Image.network(
-            'https://assets.klikindomaret.com/share/20037565/20037565_1.jpg',
-            width: 80.0,
-            height: 80.0,
-            fit: BoxFit.cover,
-          ),
-          Image.network(
-            'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//84/MTA-3542214/floridina_floridina-orange-minuman--300-ml--kemasan-botol-_full02.jpg',
-            width: 80.0,
-            height: 80.0,
-            fit: BoxFit.cover,
-          ),
-          Image.network(
-            'https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//92/MTA-2643185/fruit-tea_fruit-tea-blackcurrant-minuman-kemasan--500-ml--botol-_full02.jpg',
-            width: 80.0,
-            height: 80.0,
-            fit: BoxFit.cover,
-          ),
-          Image.network(
-              'https://images.k24klik.com/product/large/apotek_online_k24klik_20211206100212359225_AQUA-AIR-MINERAL-1500ML.jpg',
-              width: 80.0,
-              height: 80.0,
-              fit: BoxFit.cover)
-        ],
-      ),
-      Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Text('Teh Pucuk'),
-          Text('Floridina'),
-          Text('Fruit Tea'),
-          Text('Air Mineral')
-        ],
-      ),
-    ]));
+      // ElevatedButton(onPressed: () {}, child: Text("Add to chart")),
+      // menu minuman
+      // Row(
+      //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //   //mainAxisAlignment: MainAxisAlignment.center,
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+      //   children: <Widget>[
+      //     Image.asset(
+      //       'images/drink/milku.jpg',
+      //       width: 80.0,
+      //       height: 80.0,
+      //       fit: BoxFit.cover,
+      //     ),
+      //     Image.asset(
+      //       'images/drink/coffebeer.jpg',
+      //       width: 80.0,
+      //       height: 80.0,
+      //       fit: BoxFit.cover,
+      //     ),
+      //     Image.asset(
+      //       'images/drink/tehpucuk.jpg',
+      //       width: 80.0,
+      //       height: 80.0,
+      //       fit: BoxFit.cover,
+      //     ),
+      //     Image.asset('images/drink/aqua.jpg',
+      //         width: 80.0, height: 80.0, fit: BoxFit.cover)
+      //   ],
+      // ),
+      // Row(
+      //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //   //mainAxisAlignment: MainAxisAlignment.center,
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: <Widget>[
+      //     Text('Milku'),
+      //     Text('Coffee Beer'),
+      //     Text('Teh Pucuk'),
+      //     Text('Air Mineral'),
+      //   ],
+      // ),
+      // SizedBox(height: 50),
+      // Row(
+      //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //   //mainAxisAlignment: MainAxisAlignment.center,
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: <Widget>[
+      //     Image.asset(
+      //       'images/drink/milku.jpg',
+      //       width: 80.0,
+      //       height: 80.0,
+      //       fit: BoxFit.cover,
+      //     ),
+      //     Image.asset(
+      //       'images/drink/milku.jpg',
+      //       width: 80.0,
+      //       height: 80.0,
+      //       fit: BoxFit.cover,
+      //     ),
+      //     Image.asset(
+      //       'images/drink/milku.jpg',
+      //       width: 80.0,
+      //       height: 80.0,
+      //       fit: BoxFit.cover,
+      //     ),
+      //     Image.asset('images/drink/milku.jpg',
+      //         width: 80.0, height: 80.0, fit: BoxFit.cover)
+      //   ],
+      // ),
+      // Row(
+      //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //   //mainAxisAlignment: MainAxisAlignment.center,
+      //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //   children: <Widget>[
+      //     Text('Teh Pucuk'),
+      //     Text('Floridina'),
+      //     Text('Fruit Tea'),
+      //     Text('Air Mineral')
+      //   ],
+      // ),
+    ]);
   }
 }

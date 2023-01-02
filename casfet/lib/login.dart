@@ -134,12 +134,6 @@ Widget _textField(BuildContext context) {
               hintStyle: TextStyle(color: ColorPalette.primaryDarkColor)),
           style: TextStyle(color: Colors.white),
           autofocus: false,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return 'Nama tidak boleh kosong';
-            }
-            return null;
-          },
         ),
         Padding(
           padding: EdgeInsets.only(top: 12.0),

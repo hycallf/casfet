@@ -5,10 +5,9 @@ import 'package:casfet/profil.dart';
 import 'list-user.dart';
 import '/login.dart';
 import '/about.dart';
-import '/guest/guest.dart';
+import '/guest/navigasi.dart';
 import 'package:confirm_dialog/confirm_dialog.dart';
 import 'package:flutter/cupertino.dart';
-import 'guestmode.dart';
 // import 'addProduct.dart';
 
 class NavigasiAdmin extends StatefulWidget {
@@ -19,6 +18,12 @@ class NavigasiAdmin extends StatefulWidget {
 }
 
 class _NavigasiAdminState extends State<NavigasiAdmin> {
+  var nama = "admin";
+  var email = "admin@gmail.com";
+  var alamat = "jl suka maju sendirian blunder";
+  var notelp = "+62987439234";
+  var img = "assets/images/brand-2.jpg";
+
   int _selectedIndex = 1;
   var judul = 'HomePage';
   static const TextStyle optionStyle =
@@ -27,7 +32,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
     listUser(),
     HomePage(),
     About(),
-    Guest(),
+
     // About(),
     // About(),
   ];
@@ -58,17 +63,23 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
           children: <Widget>[
             UserAccountsDrawerHeader(
               accountName:
-                  Text('Admin', style: TextStyle(fontWeight: FontWeight.bold)),
-              accountEmail: Text('Admin@gmail.com',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text('$nama', style: TextStyle(fontWeight: FontWeight.bold)),
+              accountEmail:
+                  Text('$email', style: TextStyle(fontWeight: FontWeight.bold)),
               currentAccountPicture: GestureDetector(
                 child: new CircleAvatar(
                   backgroundColor: Colors.black26,
                   child: new Text('User'),
                 ),
                 onTap: () {
-                  Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => Profil()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Profil(
+                            nama: '$nama',
+                            email: '$email',
+                            image: '$img',
+                            alamat: '$alamat',
+                            notelp: '$notelp',
+                          )));
                 },
               ),
               decoration:
@@ -84,13 +95,25 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
               title:
                   Text('Guest', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.person_outline),
-              onTap: () => _onItemTapped(3),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => NavigasiGuest()));
+              },
             ),
             new ListTile(
               title: Text('Profile',
                   style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.edit_outlined),
-              onTap: () => _onItemTapped(2),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Profil(
+                          nama: '$nama',
+                          email: '$email',
+                          image: '$img',
+                          alamat: '$alamat',
+                          notelp: '$notelp',
+                        )));
+              },
             ),
             new ListTile(
               title:
@@ -123,7 +146,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'Settings',
+            label: 'About',
           ),
         ],
         currentIndex: _selectedIndex,
