@@ -1,4 +1,4 @@
-import 'dart:html';
+// import 'dart:html';
 import 'splashscreen.dart';
 import 'package:flutter/material.dart';
 

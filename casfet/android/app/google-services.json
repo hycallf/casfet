@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "556729807938",
+    "project_id": "casfet-b4d42",
+    "storage_bucket": "casfet-b4d42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556729807938:android:2886a7455200e9cbdf69db",
+        "android_client_info": {
+          "package_name": "com.casfet.connect_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556729807938-bur4hj5sfmafad9tjna1j1cevlu1ic9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkTAgyiRL1bkpX2iW900dl8IKkOBwqOO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556729807938-bur4hj5sfmafad9tjna1j1cevlu1ic9b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
