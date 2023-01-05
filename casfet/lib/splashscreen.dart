@@ -1,10 +1,17 @@
 import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter_application_1/audio/lib/main.dart';
 // import 'dart:async';
 import 'package:casfet/splashscreen.dart';
 // import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'login.dart';
+// import 'login.dart';
+
+// firebase auth
+import 'package:casfet/widget/login_widget.dart';
+import 'package:casfet/widget/register_widget.dart';
+import 'package:casfet/auth_page.dart';
+import './admin/navigasi.dart';
 
 class SplashScreen extends StatefulWidget {
   _SplashScreen createState() => _SplashScreen();
@@ -21,7 +28,17 @@ class _SplashScreen extends State<SplashScreen> {
     return Timer(duration, () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => LoginPage()),
+        MaterialPageRoute(
+            builder: (context) => StreamBuilder<User?>(
+                  stream: FirebaseAuth.instance.authStateChanges(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return NavigasiAdmin();
+                    } else {
+                      return AuthPage();
+                    }
+                  },
+                )), // using firebase auth
       );
     });
   }
