@@ -46,7 +46,7 @@ class _NavigasiGuestState extends State<NavigasiGuest> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(
-          Icons.add_chart,
+          Icons.shopping_cart,
           size: 30,
           color: Colors.black,
         ),
@@ -79,3 +79,4 @@ class _NavigasiGuestState extends State<NavigasiGuest> {
     );
   }
 }
+

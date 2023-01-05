@@ -37,7 +37,7 @@ class About extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 40,
             ),
             Text(
               "- Andi Muhammad Fikri (Prototype)\n- Damar Adji Shodikin\n- El-Thaariq Is'ad\n- Khaira Isyara\n- Muhammad Haikal Fuady\n- Muhammad Ihsan Shiddiq",
