@@ -10,8 +10,68 @@ class ColorPalette {
 }
 
 class RegisterPage extends StatelessWidget {
+  // final _name = TextEditingController();
+  // final _username = TextEditingController();
+  // final _email = TextEditingController();
+  // final _password = TextEditingController();
+
+  // final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+    // final name_field = TextFormField(
+    //     controller: _name,
+    //     autofocus: false,
+    //     validator: (value) {
+    //       if (value == null || value.trim().isEmpty) {
+    //         return 'This field is required';
+    //       }
+    //     },
+    //     decoration: InputDecoration(
+    //         contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+    //         hintText: "Name",
+    //         border:
+    //             OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
+    // final username_field = TextFormField(
+    //     controller: _username,
+    //     autofocus: false,
+    //     validator: (value) {
+    //       if (value == null || value.trim().isEmpty) {
+    //         return 'This field is required';
+    //       }
+    //     },
+    //     decoration: InputDecoration(
+    //         contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+    //         hintText: "Name",
+    //         border:
+    //             OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
+    // final email_field = TextFormField(
+    //     controller: _email,
+    //     autofocus: false,
+    //     validator: (value) {
+    //       if (value == null || value.trim().isEmpty) {
+    //         return 'This field is required';
+    //       }
+    //     },
+    //     decoration: InputDecoration(
+    //         contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+    //         hintText: "Name",
+    //         border:
+    //             OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
+    // final password_field = TextFormField(
+    //     controller: _password,
+    //     autofocus: false,
+    //     validator: (value) {
+    //       if (value == null || value.trim().isEmpty) {
+    //         return 'This field is required';
+    //       }
+    //     },
+    //     decoration: InputDecoration(
+    //         contentPadding: const EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+    //         hintText: "Name",
+    //         border:
+    //             OutlineInputBorder(borderRadius: BorderRadius.circular(32.0))));
+
     return Scaffold(
       body: Container(
         color: ColorPalette.primaryColor,
@@ -86,6 +146,8 @@ Widget _textField() {
       Padding(
         padding: EdgeInsets.only(top: 12.0),
       ),
+
+      // Input Username
       TextFormField(
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -109,6 +171,8 @@ Widget _textField() {
       Padding(
         padding: EdgeInsets.only(top: 12.0),
       ),
+
+      // Input Email
       TextFormField(
         decoration: const InputDecoration(
             border: OutlineInputBorder(),
@@ -132,6 +196,8 @@ Widget _textField() {
       Padding(
         padding: EdgeInsets.only(top: 12.0),
       ),
+
+      // Input Password
       TextFormField(
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
@@ -157,6 +223,8 @@ Widget _textField() {
       Padding(
         padding: EdgeInsets.only(top: 12.0),
       ),
+
+      // Input Nomer Telepon
       TextFormField(
         decoration: const InputDecoration(
           border: OutlineInputBorder(),
