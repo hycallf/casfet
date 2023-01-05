@@ -32,6 +32,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -46,10 +48,16 @@ dependencies:
   http:
   flutter_native_splash: ^2.2.8
   splashscreen:
+  cloud_firestore: ^4.3.1
+  firebase_auth: ^4.2.5
+  email_validator: ^2.1.17
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
