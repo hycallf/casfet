@@ -1,10 +1,12 @@
 // import 'dart:html';
+import 'package:casfet/utils.dart';
 import 'splashscreen.dart';
 import 'package:flutter/material.dart';
 // firebase auth
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:casfet/widget/login_widget.dart';
+import 'package:casfet/utils.dart';
 import './admin/beta-homepage.dart';
 import 'auth_page.dart';
 
@@ -19,6 +21,7 @@ final navigatorKey = GlobalKey<NavigatorState>();
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
+        scaffoldMessengerKey: Utils.messengerKey,
         navigatorKey: navigatorKey,
         debugShowCheckedModeBanner: false,
         // title: title,
