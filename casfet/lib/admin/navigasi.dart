@@ -55,7 +55,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
     return Scaffold(
       appBar: AppBar(
         title: Text("$judul"),
-        backgroundColor: Color.fromARGB(255, 6, 53, 92),
+        backgroundColor: Color.fromARGB(255, 4, 136, 210),
       ),
       drawer: Drawer(
         //ignore: sort_child_properties_last
@@ -151,8 +151,8 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
         ],
         currentIndex: _selectedIndex,
         unselectedItemColor: Colors.white,
-        selectedItemColor: Color.fromARGB(255, 80, 90, 235),
-        backgroundColor: Color.fromARGB(255, 6, 53, 92),
+        selectedItemColor: Color.fromARGB(255, 153, 179, 194),
+        backgroundColor: Color.fromARGB(255, 4, 136, 210),
         onTap: _onItemTapped,
       ),
     );

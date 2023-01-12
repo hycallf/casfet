@@ -40,7 +40,7 @@ class About extends StatelessWidget {
               height: 40,
             ),
             Text(
-              "- Andi Muhammad Fikri (Prototype)\n- Damar Adji Shodikin\n- El-Thaariq Is'ad\n- Khaira Isyara\n- Muhammad Haikal Fuady\n- Muhammad Ihsan Shiddiq",
+              "- Damar Adji Shodikin\n- El-Thaariq Is'ad\n- Khaira Isyara\n- Muhammad Haikal Fuady\n- Muhammad Ihsan Shiddiq",
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.normal,
