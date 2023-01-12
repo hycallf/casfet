@@ -127,7 +127,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
               title:
                   Text('Logout', style: TextStyle(fontWeight: FontWeight.bold)),
               leading: new Icon(Icons.logout_rounded),
-              onTap: () => logout(context),
+              onTap: () => FirebaseAuth.instance.signOut(),
             )
           ],
         ),
