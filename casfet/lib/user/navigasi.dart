@@ -22,7 +22,7 @@ class _NavigasiUserState extends State<NavigasiUser> {
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   List<Widget> _widgetOptions = <Widget>[
     ProductManager(),
-    HomePage(),
+    HomePageUser(),
     About(),
   ];
 
@@ -139,7 +139,11 @@ void logout(BuildContext context) {
             CupertinoDialogAction(
               onPressed: () => {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (ctx) => LoginPage())),
+                    context,
+                    MaterialPageRoute(
+                        builder: (ctx) => LoginPage(
+                              onClickedRegister: () {},
+                            ))),
               },
               child: const Text('Yes'),
               isDefaultAction: true,

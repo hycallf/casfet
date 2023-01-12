@@ -7,7 +7,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:casfet/widget/login_widget.dart';
 import 'package:casfet/utils.dart';
-import './admin/beta-homepage.dart';
+import './admin/beta-homepage.dart'; // page admin
+import './admin/homePage.dart'; // page admin
+import './user/homePage.dart'; // page user
 import 'auth_page.dart';
 
 void main() async {

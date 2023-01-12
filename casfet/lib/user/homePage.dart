@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
-class HomePage extends StatelessWidget {
+class HomePageUser extends StatelessWidget {
   //data dummy yang akan ditampilkan
   final List<Sales> data = [
     //kita masukan data ke dalam model

@@ -274,7 +274,11 @@ Widget _buildButton(BuildContext context) {
       TextButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (_) => LoginPage()));
+              context,
+              MaterialPageRoute(
+                  builder: (_) => LoginPage(
+                        onClickedRegister: () {},
+                      )));
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 8.0),
@@ -308,7 +312,11 @@ Widget _buildButton(BuildContext context) {
           TextButton(
             onPressed: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (_) => LoginPage()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => LoginPage(
+                            onClickedRegister: () {},
+                          )));
             },
             child: const Text(
               'Login',

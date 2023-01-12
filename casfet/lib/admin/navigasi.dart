@@ -171,7 +171,11 @@ void logout(BuildContext context) {
             CupertinoDialogAction(
               onPressed: () => {
                 Navigator.push(
-                    context, MaterialPageRoute(builder: (ctx) => LoginPage())),
+                    context,
+                    MaterialPageRoute(
+                        builder: (ctx) => LoginPage(
+                              onClickedRegister: () {},
+                            ))),
               },
               child: const Text('Yes'),
               isDefaultAction: true,
