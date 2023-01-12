@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:casfet/admin/addProduct.dart';
 import 'package:flutter/material.dart';
 import 'homePage.dart';
@@ -18,8 +19,9 @@ class NavigasiAdmin extends StatefulWidget {
 }
 
 class _NavigasiAdminState extends State<NavigasiAdmin> {
+  final user = FirebaseAuth.instance.currentUser!;
   var nama = "admin";
-  var email = "admin@gmail.com";
+  // var email = "admin@gmail.com";
   var alamat = "jl suka maju sendirian blunder";
   var notelp = "+62987439234";
   var img = "assets/images/brand-2.jpg";
@@ -64,8 +66,8 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
             UserAccountsDrawerHeader(
               accountName:
                   Text('$nama', style: TextStyle(fontWeight: FontWeight.bold)),
-              accountEmail:
-                  Text('$email', style: TextStyle(fontWeight: FontWeight.bold)),
+              accountEmail: Text(user.email!,
+                  style: TextStyle(fontWeight: FontWeight.bold)),
               currentAccountPicture: GestureDetector(
                 child: new CircleAvatar(
                   backgroundColor: Colors.black26,
@@ -75,7 +77,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => Profil(
                             nama: '$nama',
-                            email: '$email',
+                            email: user.email!,
                             image: '$img',
                             alamat: '$alamat',
                             notelp: '$notelp',
@@ -108,7 +110,7 @@ class _NavigasiAdminState extends State<NavigasiAdmin> {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => Profil(
                           nama: '$nama',
-                          email: '$email',
+                          email: user.email!,
                           image: '$img',
                           alamat: '$alamat',
                           notelp: '$notelp',

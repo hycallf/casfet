@@ -1,4 +1,5 @@
 // import 'dart:html';
+import 'package:casfet/admin/navigasi.dart';
 import 'package:casfet/utils.dart';
 import 'splashscreen.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,9 @@ class MyHomePage extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            return HomePageAdmin();
+            // Navigator.push(context,
+            //     MaterialPageRoute(builder: (context) => NavigasiAdmin()));
+            return NavigasiAdmin();
           } else {
             return AuthPage();
           }

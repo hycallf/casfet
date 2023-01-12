@@ -46,9 +46,6 @@ class ColorPalette {
 var _formkey = GlobalKey<FormState>();
 // var uname = TextEditingController();
 // var passwd = TextEditingController();
-final navigatorKey = GlobalKey<NavigatorState>();
-final _emailController = TextEditingController();
-final _passwordController = TextEditingController();
 
 class LoginPage extends StatefulWidget {
   final VoidCallback onClickedRegister;
@@ -63,6 +60,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // final navigatorKey = GlobalKey<NavigatorState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   void dispose() {
     _emailController.dispose();
