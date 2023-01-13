@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+/*void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(home: new Guestmode());
+  }
+}*/
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Guestmode(),
+    );
   }
 }
 
@@ -137,10 +148,13 @@ class Guestmode extends StatelessWidget {
                   color: Colors.blue, size: 30.0)),
           IconButton(
               onPressed: () {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (_) => SortPage()));
-                print("Icon Sort clicked");
+                _navigateToNextScreen(context);
               },
+              /*onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SortPage()));
+                print("Icon Sort clicked");
+              },*/
               icon: Icon(Icons.sort, color: Colors.blue, size: 30.0)),
         ],
       ),
@@ -276,6 +290,11 @@ class Guestmode extends StatelessWidget {
         ],
       ),
     ]));
+  }
+
+  void _navigateToNextScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => SortPage()));
   }
 }
 
