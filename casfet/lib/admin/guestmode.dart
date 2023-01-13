@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
 
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(home: new Guestmode());
+  }
+}
+
 class Guestmode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -128,6 +137,8 @@ class Guestmode extends StatelessWidget {
                   color: Colors.blue, size: 30.0)),
           IconButton(
               onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => SortPage()));
                 print("Icon Sort clicked");
               },
               icon: Icon(Icons.sort, color: Colors.blue, size: 30.0)),
@@ -265,5 +276,43 @@ class Guestmode extends StatelessWidget {
         ],
       ),
     ]));
+  }
+}
+
+class SortPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Filter/Sort"),
+      ),
+      body: Center(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            ListTile(
+              title: Text("A-Z"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Makanan"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Minuman"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Harga terendah"),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text("Harga tertinggi"),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
